@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+
+/* ─── Footer Shell ─────────────────────────────────── */
+.utopia-footer {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)),
+        linear-gradient(45deg,
+            #808080 0%,
+            #645c45 15%,
+            #857c55 30%,
+            #9d8c5d 50%,
+            #756842 65%,
+            #584d32 85%,
+            #707070 100%
+        );
+    color: white;
+    padding-top: 80px;
+}
+
+/* ─── Container & Grid ─────────────────────────────── */
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ─── Brand ────────────────────────────────────────── */
+.brand-title {
+    font-family: 'Boowie', sans-serif;
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    font-weight: 320;
+    letter-spacing: 1px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.brand-description {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+    line-height: 1.6;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.brand-tagline {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+}
+
+/* ─── Sections ─────────────────────────────────────── */
+.footer-section {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Boowie', sans-serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-weight: 320;
+    letter-spacing: 1px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.section-list {
+    font-family: 'Urbanist', sans-serif;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-list li {
+    font-size: clamp(0.8rem, 1.1vw, 0.875rem);
+    color: white;
+    margin-bottom: 0.5rem;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.section-list li:hover {
+    opacity: 0.8;
+}
+
+/* ─── Contact ──────────────────────────────────────── */
+.contact-info {
+    font-family: 'Urbanist', sans-serif;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: clamp(0.8rem, 1.1vw, 0.875rem);
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+}
+
+/* ─── Mobile center alignment ──────────────────────── */
+@media (max-width: 600px) {
+    .utopia-footer { padding-top: 50px; }
+
+    .brand-title,
+    .section-title,
+    .brand-description,
+    .brand-tagline {
+        text-align: center;
+    }
+
+    .section-list { text-align: center; }
+
+    .contact-item { justify-content: center; }
+}
+
+/* ─── Footer Bottom ────────────────────────────────── */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        gap: 0;
+    }
+}
+
+.copyright,
+.specialization {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-legal-links {
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-legal-links:hover {
+    opacity: 0.7;
+}

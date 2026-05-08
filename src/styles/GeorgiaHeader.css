@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=red-hat-display@700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+.georgia-header-body {
+  background: #201f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.georgia-header-title {
+  font-size: 2rem;
+  font-family: 'boowie', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+@media (max-width: 359px) {
+  .georgia-header-body {
+    padding-top: 60px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .georgia-header-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .georgia-header-body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .georgia-header-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .georgia-header-body {
+    padding-top: 80px;
+    padding-bottom: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .georgia-header-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .georgia-header-body {
+    padding-top: 85px;
+    padding-bottom: 35px;
+  }
+  .georgia-header-title {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 864px) {
+  .georgia-header-body {
+    padding-top: 90px;
+    padding-bottom: 38px;
+  }
+  .georgia-header-title {
+    font-size: 2rem;
+  }
+}

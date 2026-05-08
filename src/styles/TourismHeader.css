@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=red-hat-display@700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+.tourism-header-body {
+  width: 100%;
+  background: #201f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 90px;
+}
+
+.tourism-header-title {
+  font-size: 2rem;
+  font-family: "boowie", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+@media (max-width: 359px) {
+  .tourism-header-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .tourism-header-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .tourism-header-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .tourism-header-title {
+    font-size: 1.9rem;
+  }
+}

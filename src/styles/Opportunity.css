@@ -1,0 +1,61 @@
+@import url('https://fonts.cdnfonts.com/css/boowie');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ─── Base ─────────────────────────────────────────── */
+.opportunity-body {
+    width: 100%;
+    background: #201f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.opportunity-title {
+    font-family: 'Boowie', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.looking-for,
+.georgia-place,
+.relax {
+    width: min(80%, 900px);
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Urbanist', sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    letter-spacing: 0.5px;
+    color: #DCDCDC;
+}
+
+.georgia-place {
+    margin-top: 15px;
+}
+
+.relax {
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    font-style: italic;
+    margin-top: 25px;
+}
+
+/* ─── Mobile adjustments ───────────────────────────── */
+@media (max-width: 480px) {
+    .opportunity-title {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .looking-for,
+    .georgia-place,
+    .relax {
+        width: 90%;
+    }
+}

@@ -1,0 +1,292 @@
+@import url('https://fonts.cdnfonts.com/css/boowie');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ─── Body & Container ──────────────────────────────── */
+.tours-app-body {
+    background: #201f1f;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tours-app-container {
+    background: #201f1f;
+    padding-bottom: 100px;
+}
+
+/* ─── Return Button ─────────────────────────────────── */
+.return {
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'Urbanist', sans-serif;
+    transition: all 0.5s ease;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.return:hover {
+    letter-spacing: 3px;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)),
+        linear-gradient(45deg, #808080 0%, #645c45 15%, #857c55 30%, #9d8c5d 50%, #756842 65%, #584d32 85%, #707070 100%);
+    color: white;
+    box-shadow: rgba(255,255,255,0.8) 0px 3px 12px 0px;
+}
+
+.return:active {
+    letter-spacing: 3px;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)),
+        linear-gradient(45deg, #808080 0%, #645c45 15%, #857c55 30%, #9d8c5d 50%, #756842 65%, #584d32 85%, #707070 100%);
+    color: white;
+    box-shadow: none;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+/* ─── Heading ───────────────────────────────────────── */
+.tours-app-heading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.tours-heading-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tours-heading-title h2 {
+    font-size: 2.4rem;
+    font-family: 'Boowie', sans-serif;
+    margin-top: 95px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.tours-heading-title p {
+    font-size: 1rem;
+    font-family: 'Urbanist', sans-serif;
+    color: #999;
+    text-align: center;
+    width: 80%;
+    margin: 30px auto 0;
+}
+
+/* ─── Card Grid ─────────────────────────────────────── */
+.tours-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+}
+
+@media (max-width: 800px) {
+    .tours-card-container {
+        grid-template-columns: 1fr;
+        padding: 60px 20px 40px;
+    }
+}
+
+/* ─── Card ──────────────────────────────────────────── */
+.tours-card {
+    position: relative;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.tours-card:hover {
+    transform: translateY(-5px);
+}
+
+/* next/image fill needs position:relative + explicit height on parent */
+.tours-card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.tours-card-image img {
+    transition: transform 0.3s;
+}
+
+.tours-card:hover .tours-card-image img {
+    transform: scale(1.1);
+}
+
+/* ─── Card Content ──────────────────────────────────── */
+.tours-card-content {
+    padding: 20px;
+}
+
+.tours-category {
+    font-size: 0.7rem;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 300;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.tours-card-content h3 {
+    font-size: 1.1rem;
+    font-family: 'Boowie', sans-serif;
+    letter-spacing: 0.5px;
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.4;
+    min-height: 40px;
+}
+
+.tours-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.tours-score {
+    background: linear-gradient(45deg, #ffd700, #ffb347);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tours-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tours-amount {
+    font-size: 1.2rem;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ─── Purchase Button ───────────────────────────────── */
+.tours-purchase {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)),
+        linear-gradient(45deg, #808080 0%, #645c45 15%, #857c55 30%, #9d8c5d 50%, #756842 65%, #584d32 85%, #707070 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Boowie', sans-serif;
+}
+
+.tours-purchase:hover {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1)),
+        linear-gradient(45deg, #808080 0%, #645c45 15%, #857c55 30%, #9d8c5d 50%, #756842 65%, #584d32 85%, #707070 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(157,140,93,0.4);
+}
+
+.tours-purchase:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(157,140,93,0.3);
+}
+
+/* ─── Favourite Button ──────────────────────────────── */
+.tours-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tours-card:hover .tours-favorite {
+    opacity: 1;
+}
+
+.tours-favorite:hover {
+    color: #ff5a60;
+    transform: scale(1.1);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px 30px 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    font-size: 12px;
+    font-family: 'Urbanist', sans-serif;
+    color: black;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 0.65em;
+}
+
+@media (max-width: 600px) {
+    .tours-app-heading {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 15px;
+        gap: 10px;
+    }
+
+    .return {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    .language-dropdown {
+        position: static;
+        width: 100%;
+    }
+
+    .tours-heading-title h2 {
+        margin-top: 20px;
+    }
+}

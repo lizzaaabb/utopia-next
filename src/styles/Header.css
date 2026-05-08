@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=red-hat-display@700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+}
+
+/* ── ROOT ── */
+/* ── ROOT ── */
+.heading-body {
+  background-image: url('/batumiback.jpeg');  /* ← add this */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;          /* ← change height to min-height */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0 0 0 0.25px rgba(255, 255, 255, 0.3);
+  padding: 0 20px;
+  z-index: 100;
+  background: transparent;    /* ← add this so image shows through */
+  transition: backdrop-filter 0.4s ease, background-color 0.4s ease;
+}
+
+.header1,
+.header2,
+.header3 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.header1 {
+  justify-content: flex-start;
+  padding-left: 40px;
+}
+
+.header2 {
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header3 {
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+/* fix: next/image wraps img in a span — normalise it */
+.header1 span {
+  display: flex !important;
+  align-items: center;
+}
+
+.utopia-logo {
+  height: 50px !important;
+  width: auto !important;
+  opacity: 0.8;
+  object-fit: contain;
+}
+
+.header2-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.header2-text-container h2 {
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.header2-text-container p {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 100;
+}
+
+/* ── CONTACT / HAMBURGER ── */
+.contact-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 0.1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px 12px;
+  position: relative;
+}
+
+.forcontact {
+  cursor: pointer;
+  padding-right: 14px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  /* fix: use border-right instead of ::after — ::after with position:absolute
+     was escaping the container since .contact-container lacked a stacking context */
+  border-right: 0.1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.forcontact:hover {
+  transform: translateY(-2px);
+}
+
+.contact,
+.discover-tours {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.formenu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  width: 34px;
+  height: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.bar {
+  background-color: #fff;
+  height: 1.5px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.bar:first-child  { width: 32px; }
+.bar:nth-child(2) { width: 22px; }
+
+/* Active (X) state */
+.hamburger.active .bar:first-child {
+  transform: translateY(5.75px) rotate(45deg);
+  width: 28px;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  transform: translateY(-5.75px) rotate(-45deg);
+  width: 28px;
+}
+
+/* ── OVERLAY ── */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1999;
+  background: transparent;
+}
+
+/* ── SIDEBAR ── */
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 2000;
+  /* fix: was 50% — on large screens that's 700px+, looks wrong.
+     Fixed px with a max-width cap gives consistent feel at every size. */
+  width: 420px;
+  max-width: 85vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 30, 30, 0.97) 80%,
+    rgba(15, 15, 15, 0.95) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 0.1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.7);
+  transition: left 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.sidebar-container.open {
+  left: 0;
+}
+
+/* ── CLOSE BUTTON ──
+   fix: original sidebar had BOTH a .sidebar-close button AND the hamburger
+   animating to an X simultaneously. The hamburger.active styles are kept for
+   the header hamburger only. The sidebar uses only .sidebar-close. */
+.sidebar-close {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  opacity: 0.45;
+  z-index: 10;
+  transition: opacity 0.25s ease;
+}
+
+.sidebar-close:hover {
+  opacity: 1;
+}
+
+.close-line {
+  position: absolute;
+  background-color: #fff;
+  height: 1.5px;
+  width: 22px;
+  border-radius: 2px;
+}
+
+.close-line:first-child  { transform: rotate(45deg); }
+.close-line:nth-child(2) { transform: rotate(-45deg); }
+
+/* ── SIDEBAR BRANDING ── */
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 36px;
+  /* fix: push content below the close button so it doesn't overlap */
+  padding-top: 72px;
+  width: 100%;
+}
+
+.sidebar-text h3 {
+  font-family: 'BOOWIE', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.sidebar-text p {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* ── NAV MENU ── */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  padding-left: 36px;
+  gap: 28px;
+  list-style: none;
+  width: 100%;
+}
+
+.menu-items a,
+.menu-scroll-btn {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+  text-align: left;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.menu-items a:hover,
+.menu-scroll-btn:hover {
+  opacity: 0.65;
+  transform: translateX(4px);
+}
+
+/* ── DIVIDER ── */
+.line {
+  height: 0.5px;
+  width: calc(100% - 72px);
+  margin: 0 36px;
+  background-color: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+/* ── TERMS ── */
+.terms {
+  display: flex;
+  flex-direction: column;
+  padding-left: 36px;
+  gap: 12px;
+}
+
+.terms a,
+.terms p {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 100;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.25s ease;
+}
+
+.terms a:hover {
+  color: #fff;
+}
+
+/* ── SOCIAL MEDIA ── */
+.social-media {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 36px;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.social-media p {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+}
+
+/* fix: next/image sets explicit width/height attrs — override for icons */
+.icon {
+  height: 28px !important;
+  width: 28px !important;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.icon:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  opacity: 1;
+}
+
+/* ── MAIN CONTENT ── */
+.landing-container {
+  width: 100%;
+  height: calc(100vh - 90px);
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════ */
+
+/* Extra-small: < 360px */
+@media (max-width: 359px) {
+  .header1 { display: none; }
+  .header2-text-container h2 { font-size: 1.1rem; }
+  .header2-text-container p  { font-size: 0.72rem; text-align: center; }
+  .contact  { font-size: 0.6rem; }
+  .bar { height: 1px; }
+  .bar:first-child  { width: 24px; }
+  .bar:nth-child(2) { width: 18px; }
+  .sidebar-container { max-width: 92vw; }
+  .sidebar-close { top: 18px; right: 18px; }
+  .sidebar-text h3 { font-size: 1.3rem; }
+  .sidebar-text p  { font-size: 0.9rem; }
+  .menu-items a, .menu-scroll-btn { font-size: 1rem; }
+  .terms a, .terms p { font-size: 0.9rem; }
+  .social-media p { font-size: 0.8rem; }
+  .icon { height: 22px !important; width: 22px !important; }
+}
+
+/* Small mobile: 360–480px */
+@media (min-width: 360px) and (max-width: 480px) {
+  .header1 { display: none; }
+  .header2-text-container h2 { font-size: 1.2rem; }
+  .header2-text-container p  { font-size: 0.78rem; text-align: center; }
+  .header3 { padding-right: 8px; }
+  .contact  { font-size: 0.72rem; }
+  .bar { height: 1px; }
+  .bar:first-child  { width: 26px; }
+  .bar:nth-child(2) { width: 20px; }
+  .sidebar-container { max-width: 88vw; }
+  .sidebar-text h3 { font-size: 1.5rem; }
+  .sidebar-text p  { font-size: 1rem; }
+  .menu-items a, .menu-scroll-btn { font-size: 1.05rem; }
+  .terms a, .terms p { font-size: 0.95rem; }
+  .social-media p { font-size: 0.88rem; }
+  .icon { height: 24px !important; width: 24px !important; }
+}
+
+/* Mid mobile: 481–600px */
+@media (min-width: 481px) and (max-width: 600px) {
+  .header1 { display: none; }
+  .header2-text-container h2 { font-size: 1.3rem; }
+  .header2-text-container p  { font-size: 0.85rem; text-align: center; }
+  .header3 { padding-right: 10px; }
+  .contact  { font-size: 0.85rem; }
+  .bar { height: 1px; }
+  .bar:first-child  { width: 28px; }
+  .bar:nth-child(2) { width: 20px; }
+  .sidebar-container { max-width: 80vw; }
+  .sidebar-text h3 { font-size: 1.7rem; }
+  .sidebar-text p  { font-size: 1.05rem; }
+  .menu-items a, .menu-scroll-btn { font-size: 1.1rem; }
+  .terms a, .terms p { font-size: 1rem; }
+  .social-media p { font-size: 0.9rem; }
+}
+
+/* Large mobile / small tablet: 601–767px */
+@media (min-width: 601px) and (max-width: 767px) {
+  .header1 { display: none; }
+  .header2-text-container h2 { font-size: 1.35rem; }
+  .header2-text-container p  { font-size: 0.9rem; }
+  .header3 { padding-right: 12px; }
+  .contact  { font-size: 0.9rem; }
+  .bar { height: 1px; }
+  .bar:first-child  { width: 28px; }
+  .bar:nth-child(2) { width: 20px; }
+  .sidebar-container { width: 360px; max-width: 80vw; }
+  .sidebar-text h3 { font-size: 1.8rem; }
+  .sidebar-text p  { font-size: 1.1rem; }
+  .menu-items a, .menu-scroll-btn { font-size: 1.1rem; }
+  .terms a, .terms p { font-size: 1rem; }
+  .social-media p { font-size: 0.95rem; }
+}
+
+/* Tablet: 768–864px */
+@media (min-width: 768px) and (max-width: 864px) {
+  .header2-text-container h2 { font-size: 1.5rem; }
+  .header2-text-container p  { font-size: 0.9rem; }
+  .header1 { padding-left: 20px; }
+  .header3 { padding-right: 20px; }
+  .sidebar-container { width: 380px; }
+  .sidebar-text h3 { font-size: 2rem; }
+  .sidebar-text p  { font-size: 1.1rem; }
+  .menu-items a, .menu-scroll-btn { font-size: 1.15rem; }
+  .terms a, .terms p { font-size: 1.05rem; }
+}

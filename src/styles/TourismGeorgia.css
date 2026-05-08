@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+
+.tourism-georgia-body {
+  width: 100%;
+  background: #201f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+@keyframes autoRun3d {
+  from { transform: perspective(800px) rotateY(-360deg); }
+  to   { transform: perspective(800px) rotateY(0deg); }
+}
+
+@keyframes cardBackground {
+  0%,100% { background-position: 0% 50%, 0% 50%; }
+  50%      { background-position: 0% 50%, 100% 50%; }
+}
+
+.card-3d {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: autoRun3d 33s linear infinite;
+  will-change: transform;
+}
+
+.card-3d:hover,
+.card-3d:hover div {
+  animation-play-state: paused;
+}
+
+.card-3d div {
+  position: absolute;
+  width: 290px;
+  height: 120px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)),
+    linear-gradient(45deg, #808080 0%, #645c45 15%, #857c55 30%, #9d8c5d 50%, #756842 65%, #584d32 85%, #707070 100%);
+  background-size: 100% 100%, 200% 200%;
+  border-radius: 1rem;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: cardBackground 6s ease infinite;
+  will-change: transform, filter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-3d div:nth-child(1) { transform: translate(-50%,-50%) rotateY(0deg)   translateZ(290px); animation-delay: 0s; }
+.card-3d div:nth-child(2) { transform: translate(-50%,-50%) rotateY(60deg)  translateZ(290px); animation-delay: -2s; }
+.card-3d div:nth-child(3) { transform: translate(-50%,-50%) rotateY(120deg) translateZ(290px); animation-delay: -4s; }
+.card-3d div:nth-child(4) { transform: translate(-50%,-50%) rotateY(180deg) translateZ(290px); animation-delay: -6s; }
+.card-3d div:nth-child(5) { transform: translate(-50%,-50%) rotateY(240deg) translateZ(290px); animation-delay: -8s; }
+.card-3d div:nth-child(6) { transform: translate(-50%,-50%) rotateY(300deg) translateZ(290px); animation-delay: -10s; }
+
+.tourism-georgia-text {
+  font-size: 0.8rem;
+  font-family: 'Urbanist', sans-serif;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 359px) {
+  .tourism-georgia-body { height: 300px; padding: 5px; }
+  .card-3d { width: 200px; height: 100px; animation: autoRun3d-xs 33s linear infinite; }
+  .card-3d div { width: 130px; height: 50px; padding: 4px; }
+  .card-3d div:nth-child(1) { transform: translate(-50%,-50%) rotateY(0deg)   translateZ(130px); }
+  .card-3d div:nth-child(2) { transform: translate(-50%,-50%) rotateY(60deg)  translateZ(130px); }
+  .card-3d div:nth-child(3) { transform: translate(-50%,-50%) rotateY(120deg) translateZ(130px); }
+  .card-3d div:nth-child(4) { transform: translate(-50%,-50%) rotateY(180deg) translateZ(130px); }
+  .card-3d div:nth-child(5) { transform: translate(-50%,-50%) rotateY(240deg) translateZ(130px); }
+  .card-3d div:nth-child(6) { transform: translate(-50%,-50%) rotateY(300deg) translateZ(130px); }
+  .tourism-georgia-text { font-size: 0.5rem; }
+}
+@keyframes autoRun3d-xs {
+  from { transform: perspective(350px) rotateY(-360deg); }
+  to   { transform: perspective(350px) rotateY(0deg); }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .tourism-georgia-body { height: 350px; padding: 10px; }
+  .card-3d { width: 240px; height: 120px; animation: autoRun3d-sm 33s linear infinite; }
+  .card-3d div { width: 160px; height: 79px; padding: 5px; }
+  .card-3d div:nth-child(1) { transform: translate(-50%,-50%) rotateY(0deg)   translateZ(150px); }
+  .card-3d div:nth-child(2) { transform: translate(-50%,-50%) rotateY(60deg)  translateZ(150px); }
+  .card-3d div:nth-child(3) { transform: translate(-50%,-50%) rotateY(120deg) translateZ(150px); }
+  .card-3d div:nth-child(4) { transform: translate(-50%,-50%) rotateY(180deg) translateZ(150px); }
+  .card-3d div:nth-child(5) { transform: translate(-50%,-50%) rotateY(240deg) translateZ(150px); }
+  .card-3d div:nth-child(6) { transform: translate(-50%,-50%) rotateY(300deg) translateZ(150px); }
+  .tourism-georgia-text { font-size: 0.55rem; width: 95%; }
+}
+@keyframes autoRun3d-sm {
+  from { transform: perspective(400px) rotateY(-360deg); }
+  to   { transform: perspective(400px) rotateY(0deg); }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .tourism-georgia-body { height: 400px; padding: 15px; }
+  .card-3d { width: 280px; height: 140px; animation: autoRun3d-md 33s linear infinite; }
+  .card-3d div { width: 170px; height: 70px; padding: 6px; }
+  .card-3d div:nth-child(1) { transform: translate(-50%,-50%) rotateY(0deg)   translateZ(170px); }
+  .card-3d div:nth-child(2) { transform: translate(-50%,-50%) rotateY(60deg)  translateZ(170px); }
+  .card-3d div:nth-child(3) { transform: translate(-50%,-50%) rotateY(120deg) translateZ(170px); }
+  .card-3d div:nth-child(4) { transform: translate(-50%,-50%) rotateY(180deg) translateZ(170px); }
+  .card-3d div:nth-child(5) { transform: translate(-50%,-50%) rotateY(240deg) translateZ(170px); }
+  .card-3d div:nth-child(6) { transform: translate(-50%,-50%) rotateY(300deg) translateZ(170px); }
+  .tourism-georgia-text { font-size: 0.6rem; }
+}
+@keyframes autoRun3d-md {
+  from { transform: perspective(450px) rotateY(-360deg); }
+  to   { transform: perspective(450px) rotateY(0deg); }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .tourism-georgia-body { height: 550px; padding: 20px; }
+  .card-3d { width: 380px; height: 190px; animation: autoRun3d-lg 33s linear infinite; }
+  .card-3d div { width: 240px; height: 95px; padding: 10px; }
+  .card-3d div:nth-child(1) { transform: translate(-50%,-50%) rotateY(0deg)   translateZ(240px); }
+  .card-3d div:nth-child(2) { transform: translate(-50%,-50%) rotateY(60deg)  translateZ(240px); }
+  .card-3d div:nth-child(3) { transform: translate(-50%,-50%) rotateY(120deg) translateZ(240px); }
+  .card-3d div:nth-child(4) { transform: translate(-50%,-50%) rotateY(180deg) translateZ(240px); }
+  .card-3d div:nth-child(5) { transform: translate(-50%,-50%) rotateY(240deg) translateZ(240px); }
+  .card-3d div:nth-child(6) { transform: translate(-50%,-50%) rotateY(300deg) translateZ(240px); }
+  .tourism-georgia-text { font-size: 0.8rem; }
+}
+@keyframes autoRun3d-lg {
+  from { transform: perspective(700px) rotateY(-360deg); }
+  to   { transform: perspective(700px) rotateY(0deg); }
+}
+
+@media (min-width: 768px) and (max-width: 864px) {
+  .tourism-georgia-body { height: 580px; padding: 20px; }
+  .card-3d { width: 390px; height: 195px; animation: autoRun3d-xl 33s linear infinite; }
+  .card-3d div { width: 245px; height: 98px; padding: 10px; }
+  .card-3d div:nth-child(1) { transform: translate(-50%,-50%) rotateY(0deg)   translateZ(245px); }
+  .card-3d div:nth-child(2) { transform: translate(-50%,-50%) rotateY(60deg)  translateZ(245px); }
+  .card-3d div:nth-child(3) { transform: translate(-50%,-50%) rotateY(120deg) translateZ(245px); }
+  .card-3d div:nth-child(4) { transform: translate(-50%,-50%) rotateY(180deg) translateZ(245px); }
+  .card-3d div:nth-child(5) { transform: translate(-50%,-50%) rotateY(240deg) translateZ(245px); }
+  .card-3d div:nth-child(6) { transform: translate(-50%,-50%) rotateY(300deg) translateZ(245px); }
+  .tourism-georgia-text { font-size: 0.85rem; }
+}
+@keyframes autoRun3d-xl {
+  from { transform: perspective(750px) rotateY(-360deg); }
+  to   { transform: perspective(750px) rotateY(0deg); }
+}

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+
+.about-georgia-body {
+  background: #201f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 100px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.about-georgia-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.about-georgia-card {
+  height: 300px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 1.5rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  gap: 20px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  justify-self: center;
+  transition: transform 0.3s ease;
+}
+
+.about-georgia-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.29);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+}
+
+.about-georgia-card:hover {
+  transform: scale(1.05);
+}
+
+.about-georgia-card:hover::before {
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  background: transparent;
+}
+
+.about-georgia-title,
+.about-georgia-text {
+  position: relative;
+  z-index: 2;
+}
+
+.about-georgia-title {
+  position: absolute;
+  top: 60px;
+  font-family: 'boowie', 'Arial Black', Arial, sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 5px rgba(255,255,255,0.2);
+}
+
+.about-georgia-text {
+  font-size: 1.1rem;
+  font-family: 'urbanist', 'Segoe UI', sans-serif;
+  position: absolute;
+  top: 150px;
+  letter-spacing: 0.5px;
+  width: 90%;
+  text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.35), 0 0 3px rgba(255,255,255,0.15);
+}
+
+/* ── Mobile: 2 cols ── */
+
+@media (max-width: 359px) {
+  .about-georgia-body { padding: 60px 10px 70px; }
+  .about-georgia-cards-container { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px; padding: 0 5px; }
+  .about-georgia-card { height: 140px; max-width: 140px; gap: 8px; }
+  .about-georgia-title { font-size: 1.1rem; position: static; }
+  .about-georgia-text  { font-size: 0.8rem; position: static; width: 85%; }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .about-georgia-body { padding: 70px 15px 80px; }
+  .about-georgia-cards-container { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 12px; padding: 0 10px; }
+  .about-georgia-card { height: 160px; max-width: 160px; gap: 10px; }
+  .about-georgia-title { font-size: 1rem; position: static; }
+  .about-georgia-text  { font-size: 0.75rem; position: static; width: 98%; }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .about-georgia-body { padding: 80px 20px 90px; }
+  .about-georgia-cards-container { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 15px; padding: 0 15px; }
+  .about-georgia-card { height: 180px; max-width: 180px; gap: 12px; }
+  .about-georgia-title { font-size: 1.3rem; position: static; }
+  .about-georgia-text  { font-size: 0.9rem; position: static; width: 90%; }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .about-georgia-body { padding: 85px 20px 95px; }
+  .about-georgia-cards-container { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); gap: 18px; }
+  .about-georgia-card { height: 220px; max-width: 220px; gap: 15px; }
+  .about-georgia-title { font-size: 1.4rem; position: static; }
+  .about-georgia-text  { font-size: 0.95rem; position: static; }
+}
+
+/* ── Tablet: back to 3 cols ── */
+
+@media (min-width: 768px) and (max-width: 864px) {
+  .about-georgia-body { padding: 90px 20px 100px; }
+  .about-georgia-cards-container { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 18px; }
+  .about-georgia-card { height: 240px; max-width: 240px; }
+  .about-georgia-title { font-size: 1.5rem; top: 50px; }
+  .about-georgia-text  { font-size: 1rem; top: 120px; }
+}
+
+@media (min-width: 865px) and (max-width: 1024px) {
+  .about-georgia-cards-container { gap: 20px; }
+  .about-georgia-card { height: 260px; max-width: 260px; }
+  .about-georgia-title { font-size: 1.6rem; top: 55px; }
+  .about-georgia-text  { font-size: 1.05rem; top: 135px; }
+}

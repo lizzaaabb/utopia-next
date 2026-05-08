@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/boowie');
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── Home section ─── */
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  /* background-image removed — lives on .heading-body now */
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px 20px;
+  z-index: 0;
+  width: 100%;
+}
+
+.landing-title {
+  font-family: "boowie", sans-serif;
+  font-size: clamp(1.4rem, 5vw, 3.3rem);
+  font-weight: 200;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin-left: 0; /* remove the 25px — it was pushing things off-center */
+  color: #fff;
+}
+
+.second-title p {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.85rem, 2.5vw, 1.3rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.66);
+}
+
+/* ─── Button wrapper ─── */
+.button2-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 480px) {
+  .landing-container {
+    padding: 24px 16px;
+    gap: 14px;
+  }
+
+  .button2-container {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .landing-container {
+    padding: 32px 24px;
+  }
+}
