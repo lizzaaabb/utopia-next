@@ -71,11 +71,16 @@ export default function Header({ children }) {
         </div>
 
         <div className="header2">
-          <div className="header2-text-container">
+    <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+    >
+        <div className="header2-text-container">
             <h2>UTOPIA</h2>
             <p>VIP Tourism &amp; Real Estate</p>
-          </div>
         </div>
+    </button>
+</div>
 
         <div className="header3">
           <div className="contact-container">
