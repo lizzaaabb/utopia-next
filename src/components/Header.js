@@ -131,21 +131,22 @@ export default function Header({ children }) {
 
         <div className="line" />
 
-        <div className="terms">
-          <p>Terms &amp; Conditions</p>
-          <Link href="/privacy-policy" onClick={closeSidebar}>
-            Privacy Policy
-          </Link>
-        </div>
+       
 
-        <div className="social-media">
-          <p>Follow Us On Social Media</p>
-          <div className="icons">
-            <Image src="/icon1.png" alt="Social Media" width={30} height={30} className="icon" />
-            <Image src="/icon2.png" alt="Social Media" width={30} height={30} className="icon" />
-            <Image src="/icon3.png" alt="Contact Us"   width={30} height={30} className="icon" />
-          </div>
-        </div>
+       <div className="social-media">
+    <p>Follow Us On Social Media</p>
+    <div className="icons">
+        <a href="https://wa.me/995500888171" target="_blank" rel="noopener noreferrer">
+            <Image src="/icon1.png" alt="WhatsApp" width={30} height={30} className="icon" />
+        </a>
+        <a href="https://www.facebook.com/utopiavip" target="_blank" rel="noopener noreferrer">
+            <Image src="/icon2.png" alt="Facebook" width={30} height={30} className="icon" />
+        </a>
+        <a href="https://www.instagram.com/utopia.vip.travel" target="_blank" rel="noopener noreferrer">
+            <Image src="/icon3.png" alt="Instagram" width={30} height={30} className="icon" />
+        </a>
+    </div>
+</div>
       </nav>
 
       <main className="landing-container">

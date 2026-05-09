@@ -438,6 +438,7 @@ body {
   .terms a, .terms p { font-size: 0.95rem; }
   .social-media p { font-size: 0.88rem; }
   .icon { height: 24px !important; width: 24px !important; }
+  .header-container {height:70px;  }
 }
 
 /* Mid mobile: 481–600px */
@@ -456,6 +457,7 @@ body {
   .menu-items a, .menu-scroll-btn { font-size: 1.1rem; }
   .terms a, .terms p { font-size: 1rem; }
   .social-media p { font-size: 0.9rem; }
+  .header-container {height:70px;  }
 }
 
 /* Large mobile / small tablet: 601–767px */
@@ -474,6 +476,7 @@ body {
   .menu-items a, .menu-scroll-btn { font-size: 1.1rem; }
   .terms a, .terms p { font-size: 1rem; }
   .social-media p { font-size: 0.95rem; }
+  .header-container {height:70px;  }
 }
 
 /* Tablet: 768–864px */
@@ -487,4 +490,4 @@ body {
   .sidebar-text p  { font-size: 1.1rem; }
   .menu-items a, .menu-scroll-btn { font-size: 1.15rem; }
   .terms a, .terms p { font-size: 1.05rem; }
-}
+.header-container {height:70px;  }}
