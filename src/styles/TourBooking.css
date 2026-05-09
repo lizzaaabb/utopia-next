@@ -369,9 +369,8 @@
 }
 
 .lang-ara .booking-header {
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
-
 /* ─── Responsive ────────────────────────────────────── */
 @media (max-width: 1024px) {
     .booking-content {
@@ -446,4 +445,12 @@
     .proceed-btn {
         font-size: 14px;
     }
+}
+
+.lang-ara {
+    direction: rtl;
+}
+
+.lang-ara .booking-header {
+    direction: ltr;
 }
