@@ -469,3 +469,29 @@
     background-position: right 10px center;
     background-size: 0.65em;
 }
+
+@media (max-width: 600px) {
+    .tour-detail-header {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .return {
+        position: static;
+        font-size: 10px;
+        padding: 8px 16px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .language-dropdown {
+        position: static;
+        font-size: 10px;
+        padding: 8px 24px 8px 10px;
+        background-position: right 8px center;
+    }
+}
