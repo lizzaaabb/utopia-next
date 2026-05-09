@@ -28,11 +28,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    gap: 20px;
+    margin-bottom: 15px;
+    gap: 10px;
 }
 
+.booking-steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
 .return-btn {
     padding: 12px 30px;
     border-radius: 50px;
@@ -75,12 +80,7 @@
     background-size: 0.65em;
 }
 
-/* ─── Steps ─────────────────────────────────────────── */
-.booking-steps {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
+
 
 .step {
     color: rgba(255,255,255,0.5);
@@ -382,23 +382,39 @@
         position: static;
     }
 }
-
 @media (max-width: 768px) {
+    .booking-container {
+        padding: 15px;
+    }
     .booking-header {
-        flex-direction: column !important;
-        align-items: stretch;
-        gap: 12px;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
     .return-btn {
-        width: 100%;
-        text-align: center;
+        font-size: 10px;
+        padding: 8px 16px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     .booking-steps {
         justify-content: center;
+        flex: 1;
+        gap: 10px;
+    }
+    .step {
+        font-size: 11px;
+        padding: 6px 10px;
     }
     .language-dropdown {
-        width: 100%;
-        padding: 12px 30px 12px 15px;
+        font-size: 10px;
+        padding: 8px 24px 8px 10px;
+        background-position: right 8px center;
+        flex-shrink: 0;
+        width: auto;
     }
     .form-row {
         grid-template-columns: 1fr;
@@ -415,7 +431,6 @@
         font-size: 1.5rem;
     }
 }
-
 @media (max-width: 480px) {
     .booking-steps {
         flex-direction: column;

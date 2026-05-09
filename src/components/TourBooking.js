@@ -216,26 +216,27 @@ export default function TourBooking({ id }) {
         <div className={`booking-body ${langClass}`}>
             <div className="booking-container">
 
-                {/* Header */}
-                <div className="booking-header">
-                    <button className="return-btn" onClick={handleBack}>
-                        {showSuccessModal ? 'Close' : uiStrings.backToTour[currentLanguage]}
-                    </button>
+              {/* Header */}
+<div className="booking-header">
+    <button className="return-btn" onClick={handleBack}>
+        {showSuccessModal ? 'Close' : uiStrings.backToTour[currentLanguage]}
+    </button>
 
-                    <div className="booking-steps">
-                        <span className="step active">1. {uiStrings.bookingDetails[currentLanguage]}</span>
-                        <span className="step">2. {uiStrings.confirmation[currentLanguage]}</span>
-                    </div>
+    <select
+        value={lang}
+        onChange={(e) => changeLang(e.target.value)}
+        className="language-dropdown"
+    >
+        <option value="ara">العربية</option>
+        <option value="eng">ENG</option>
+    </select>
+</div>
 
-                    <select
-                        value={lang}
-                        onChange={(e) => changeLang(e.target.value)}
-                        className="language-dropdown"
-                    >
-                        <option value="ara">العربية</option>
-                        <option value="eng">ENG</option>
-                    </select>
-                </div>
+{/* Steps below header */}
+<div className="booking-steps">
+    <span className="step active">1. {uiStrings.bookingDetails[currentLanguage]}</span>
+    <span className="step">2. {uiStrings.confirmation[currentLanguage]}</span>
+</div>
 
                 {/* Main content */}
                 <div className="booking-content">
