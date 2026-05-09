@@ -454,3 +454,11 @@
 .lang-ara .booking-header {
     direction: ltr;
 }
+
+@media (max-width: 768px) {
+    .form-group input[type="date"] {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
