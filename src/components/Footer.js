@@ -55,16 +55,9 @@ export default function Footer() {
                             </div>
                             <div className="contact-item">
                                 <Phone className="contact-icon" size={16} />
-                                <span>+995 500 888 171</span>
-                            </div>
-                            <div className="contact-item">
-                                <Phone className="contact-icon" size={16} />
                                 <span>+995 514 511 166</span>
                             </div>
-                            <div className="contact-item">
-                                <Phone className="contact-icon" size={16} />
-                                <span>+995 599 520 113</span>
-                            </div>
+                        
                             <div className="contact-item">
                                 <Mail className="contact-icon" size={16} />
                                 <span>utopiaviptravel@gmail.com</span>

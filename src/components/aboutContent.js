@@ -118,7 +118,5 @@ export const content = {
 };
 
 export const phoneNumbers = [
-  '+995 500 888 171',
   '+995 514 511 166',
-  '+995 599 520 113',
 ];
