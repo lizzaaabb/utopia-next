@@ -73,9 +73,12 @@ export default function Footer() {
                 {/* Bottom */}
                 <div className="footer-bottom">
                     <div className="footer-bottom-content">
-                        <p className="copyright">
-                            © 2025 Utopia VIP Tourism & Real Estate. Licensed Georgian Company. All rights reserved.
-                        </p>
+                       <p className="copyright">
+  © 2025 Utopia VIP Tourism & Real Estate. Licensed Georgian Company. All rights reserved. | Developed & Designed by{' '}
+  <a href="https://apollocreations.net" target="_blank" rel="noopener noreferrer" className="footer-legal-links">
+    Apollo Creations
+  </a>
+</p>
                         <Link href="/privacy-policy" className="footer-legal-links">
                             Privacy Policy
                         </Link>
