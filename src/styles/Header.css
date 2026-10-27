@@ -22,7 +22,7 @@ body {
 /* ── ROOT ── */
 /* ── ROOT ── */
 .heading-body {
-  background-image: url('/batumiback.jpeg');  /* ← add this */
+  background-image: url('/batumiback.jpg');  /* ← add this */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
